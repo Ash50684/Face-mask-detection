@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes border-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--pulse-color), 0 0 40px var(--pulse-color);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--pulse-color), 0 0 60px var(--pulse-color);
+  }
+}
+
+.border-pulse-green {
+  --pulse-color: rgba(74, 222, 128, 0.5);
+  animation: border-pulse 1.5s ease-in-out;
+}
+
+.border-pulse-red {
+  --pulse-color: rgba(239, 68, 68, 0.5);
+  animation: border-pulse 1.5s ease-in-out;
+}
+
+@keyframes active-scan {
+  0%, 100% {
+    box-shadow: 0 0 15px var(--scan-color), 0 0 30px var(--scan-color);
+    opacity: 0.8;
+  }
+  50% {
+    box-shadow: 0 0 25px var(--scan-color), 0 0 50px var(--scan-color);
+    opacity: 1;
+  }
+}
+
+.active-scan-green {
+  --scan-color: rgba(74, 222, 128, 0.4);
+  animation: active-scan 3s ease-in-out infinite;
+}
+
+.active-scan-red {
+  --scan-color: rgba(239, 68, 68, 0.4);
+  animation: active-scan 3s ease-in-out infinite;
+}
+
+@keyframes checkmark-draw {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes x-draw {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.checkmark-animation {
+  animation: checkmark-draw 0.5s ease-in-out forwards;
+}
+
+.x-animation {
+  animation: x-draw 0.5s ease-in-out forwards;
+}
+
+.digital-font {
+  font-family: 'Orbitron', monospace;
+}
